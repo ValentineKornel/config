@@ -38,8 +38,6 @@ jwt:
       resource-id: ostock
       principle-attribute: preferred_username
 
-server:
-  port: '8072'
 management:
   endpoints:
     web:
