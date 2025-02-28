@@ -24,7 +24,7 @@ spring:
             client-secret: Tw5yp3K8Rps0aKlU2f4gg188Qf1l3YGO
             authorization-grant-type: authorization_code
             scope: openid, profile, email
-      resourseserver:
+      resourceserver:
         jwt:
           issuer-uri: http://host.docker.internal:8080/realms/spmia-realm
           jwk-set-uri: http://host.docker.internal:8080/realms/spmia-realm/protocol/openid-connect/certs
