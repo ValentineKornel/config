@@ -23,13 +23,13 @@ spring:
           keycloak:
             client-id: ostock
             client-authentication-method: client_secret_basic
-            client-secret: Tw5yp3K8Rps0aKlU2f4gg188Qf1l3YGO
+            client-secret: o07Wo6swYDCyAsuJJ8AgjgZky2HaRRRS
             authorization-grant-type: authorization_code
             scope: openid, profile, email
       resourceserver:
         jwt:
-          issuer-uri: http://host.docker.internal:8080/realms/spmia-realm
-          jwk-set-uri: http://host.docker.internal:8080/realms/spmia-realm/protocol/openid-connect/certs
+          issuer-uri: http://keycloak:8080/realms/spmia-realm
+          jwk-set-uri: http://keycloak:8080/realms/spmia-realm/protocol/openid-connect/certs
 
 
 jwt:
