@@ -29,7 +29,7 @@ spring:
       resourseserver:
         jwt:
           issuer-uri: http://host.docker.internal:8080/realms/spmia-realm
-          jwk-set-uri: ${spring.security.oauth2.resourseserver.jwt.issuer-uri}/protocol/openid-connect/certs
+          jwk-set-uri: http://host.docker.internal:8080/realms/spmia-realm/protocol/openid-connect/certs
 
 
 jwt:
