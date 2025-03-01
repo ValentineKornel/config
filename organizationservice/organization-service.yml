@@ -26,8 +26,8 @@ spring:
             scope: openid, profile, email
       resourceserver:
         jwt:
-          issuer-uri: http://host.docker.internal:8080/realms/spmia-realm
-          jwk-set-uri: http://host.docker.internal:8080/realms/spmia-realm/protocol/openid-connect/certs
+          issuer-uri: http://keycloak:7080/realms/spmia-realm
+          jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
 
 jwt:
   auth:
