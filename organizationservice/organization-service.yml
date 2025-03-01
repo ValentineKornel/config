@@ -21,7 +21,7 @@ spring:
           keycloak:
             client-id: ostock
             client-authentication-method: client_secret_basic
-            client-secret: Tw5yp3K8Rps0aKlU2f4gg188Qf1l3YGO
+            client-secret: o07Wo6swYDCyAsuJJ8AgjgZky2HaRRRS
             authorization-grant-type: authorization_code
             scope: openid, profile, email
       resourceserver:
@@ -35,8 +35,6 @@ jwt:
       resource-id: ostock
       principle-attribute: preferred_username
 
-server:
-  port: '8081'
 management:
   endpoints:
     web:
