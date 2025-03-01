@@ -32,7 +32,10 @@ spring:
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
           - RemoveRequestHeader= Cookie,Set-Cookie
-        
+  http:
+    client:
+      connect-timeout: 30s
+      read-timeout: 120s
 management:
   endpoints:
     web:

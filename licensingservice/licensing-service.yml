@@ -30,7 +30,10 @@ spring:
         jwt:
           issuer-uri: http://keycloak:7080/realms/spmia-realm
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
-
+  http:
+    client:
+      connect-timeout: 30s
+      read-timeout: 120s
 
 jwt:
   auth:
