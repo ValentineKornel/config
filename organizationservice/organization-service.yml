@@ -50,7 +50,8 @@ eureka:
     serviceUrl:
       defaultZone: 'http://eurekaserver:8070/eureka/'
 
-
+server:
+  port: 8074
 
 #keycloak.realm = spmia-realm
 #keycloak.server-url = http://host.docker.internal:8080/auth

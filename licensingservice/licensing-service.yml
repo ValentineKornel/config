@@ -52,3 +52,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: 'http://eurekaserver:8070/eureka/'
+
+server:
+  port: 8073
