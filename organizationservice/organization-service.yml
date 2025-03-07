@@ -31,14 +31,31 @@ spring:
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
   cloud:
     stream:
-      kafka:
-        binder:
-          brokers: kafka
-          defaultBrokerPort: 9092
-        bindings:
-          output:
-            destination: orgChangeTopic
-            binder: kafka
+      function:
+        definition: sendTestData
+      bindings:
+        sendTestData-out-0:
+          destination: dataIn4
+          binder: kafka1
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: kafka:9092
+#    stream:
+#      bindings:
+#        output:
+#          destination: orgChangeTopic
+#          binder: kafka
+#      kafka:
+#        binder:
+#          brokers: kafka
+#          defaultBrokerPort: 9092
 
 
 

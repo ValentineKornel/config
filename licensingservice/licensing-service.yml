@@ -32,15 +32,36 @@ spring:
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
   cloud:
     stream:
-      kafka:
-        binder:
-          brokers: kafka
-          defaultBrokerPort: 9092
-        bindings:
-          input:
-            destination: output
-            group: licensingGroup
-            binder: kafka
+      function:
+        definition: receive
+      bindings:
+        receive-in-0:
+          destination: dataIn4
+          group: cg1
+          consumer:
+            maxAttempts: 3
+            resetOffsets: true
+          binder: kafka1
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: kafka:9092
+#    stream:
+#      bindings:
+#        input:
+#          destination: orgChangeTopic
+#          group: licensingGroup
+#          binder: kafka
+#      kafka:
+#        binder:
+#          brokers: kafka
+#          defaultBrokerPort: 9092
 
   http:
     client:
