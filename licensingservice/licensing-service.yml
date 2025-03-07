@@ -38,7 +38,7 @@ spring:
           defaultBrokerPort: 9092
         bindings:
           input:
-            destination: orgChangeTopic
+            destination: output
             group: licensingGroup
             binder: kafka
 
