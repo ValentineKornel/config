@@ -30,17 +30,23 @@ spring:
         jwt:
           issuer-uri: http://keycloak:7080/realms/spmia-realm
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
-  cloud:
-    stream:
-      bindings:
-        input:
-          destination: orgChangeTopic
-          group: licensingGroup
-          binder: kafka
-      kafka:
-        binder:
-          brokers: kafka
-          defaultBrokerPort: 9092
+#  cloud:
+#    stream:
+#      bindings:
+#        input:
+#          destination: orgChangeTopic
+#          group: licensingGroup
+#          binder: kafka
+#      kafka:
+#        binder:
+#          brokers: kafka
+#          defaultBrokerPort: 9092
+  kafka:
+    consumer:
+      group-id: licensingGroup  # Название группы потребителей
+      auto-offset-reset: earliest # С чего начинать читать, если нет смещения
+      bootstrap-servers: kafka:9092
+
   http:
     client:
       connect-timeout: 30s
@@ -66,11 +72,6 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: 'http://eurekaserver:8070/eureka/'
-
-logging:
-  level:
-    org.springframework.cloud.stream.binding: DEBUG
-    org.springframework.kafka: DEBUG
 
 server:
   port: 8073
