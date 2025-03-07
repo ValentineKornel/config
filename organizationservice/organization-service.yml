@@ -1,3 +1,4 @@
+
 spring:
   jpa:
     hibernate:
@@ -30,14 +31,14 @@ spring:
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
   cloud:
     stream:
-      bindings:
-        output:
-          destination: orgChangeTopic
-          binder: kafka
       kafka:
         binder:
           brokers: kafka
           defaultBrokerPort: 9092
+        bindings:
+          output:
+            destination: orgChangeTopic
+            binder: kafka
 
 
 
