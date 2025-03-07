@@ -45,8 +45,8 @@ spring:
     consumer:
       group-id: licensingGroup  # Название группы потребителей
       auto-offset-reset: earliest # С чего начинать читать, если нет смещения
-      brokers: kafka:9092
-      #bootstrap-servers: kafka:9092
+      #brokers: kafka:9092
+      bootstrap-servers: kafka:9092
 
   http:
     client:
