@@ -35,9 +35,9 @@ spring:
     stream:
       bindings:
         graalSupplier-out-0:
-          destination: graalUppercaseFunction-in-0
-        graalLoggingConsumer-in-0:
-          destination: graalUppercaseFunction-out-0
+          destination: myTopic
+#        graalLoggingConsumer-in-0:
+#          destination: graalUppercaseFunction-out-0
       kafka:
         binder:
           brokers: kafka:9092
