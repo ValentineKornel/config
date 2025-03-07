@@ -34,8 +34,8 @@ spring:
       definition: graalSupplier;graalUppercaseFunction;graalLoggingConsumer
     stream:
       bindings:
-        graalSupplier-out-0:
-          destination: myTopic
+        outputBinding:
+          destination: orgChangeTopic
 #        graalLoggingConsumer-in-0:
 #          destination: graalUppercaseFunction-out-0
       kafka:

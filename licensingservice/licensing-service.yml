@@ -32,11 +32,11 @@ spring:
           jwk-set-uri: http://keycloak:7080/realms/spmia-realm/protocol/openid-connect/certs
   cloud:
     function:
-      definition: graalUppercaseFunction;graalLoggingConsumer
+      definition: orgChangeConsumer
     stream:
       bindings:
-        graalLoggingConsumer-in-0:
-          destination: myTopic
+        orgChangeConsumer-in-0:
+          destination: orgChangeTopic
       kafka:
         binder:
           brokers: kafka:9092
