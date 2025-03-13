@@ -61,10 +61,6 @@ eureka:
 server:
   port: 8074
 
-#keycloak.realm = spmia-realm
-#keycloak.server-url = http://host.docker.internal:8080/auth
-#keycloak.ssl-required = external
-#keycloak.resource = ostock
-#keycloak.credentials.secret = Tw5yp3K8Rps0aKlU2f4gg188Qf1l3YGO
-#keycloak.use-resource-role-mappings = true
-#keycloak.bearer-only = true
+logging:
+  pattern:
+    level: $5p [traceId=%X{traceId:-}, spanId=%X{spanId:-}]

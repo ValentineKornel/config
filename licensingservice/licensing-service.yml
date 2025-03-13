@@ -74,3 +74,6 @@ redis:
 server:
   port: 8073
 
+logging:
+  pattern:
+    level: $5p [traceId=%X{traceId:-}, spanId=%X{spanId:-}]
