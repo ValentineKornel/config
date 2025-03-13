@@ -58,6 +58,9 @@ management:
       exposure:
         include: '*'
     enabled-by-default: true
+  tracing:
+    sampling:
+      probability: 1.0п
 eureka:
   instance:
     preferIpAddress: true
