@@ -41,6 +41,13 @@ management:
     web:
       exposure:
         include: "*"
+  tracing:
+    sampling:
+      probability: 1.0п
   endpoint:
     gateway:
       enabled: true
+
+logging:
+  pattern:
+    level: $5p [traceId=%X{traceId:-}, spanId=%X{spanId:-}]
