@@ -12,13 +12,13 @@ eureka:
 
 
 spring:
+  reactor:
+    context-propagation: AUTO
   cloud:
     gateway:
 #        discovery.locator:
 #            enabled: true
 #            lowerCaseServiceId: true
-        tracing:
-          enabled: true
         routes:
         - id: organization-service
           uri: lb://organization-service
@@ -34,10 +34,10 @@ spring:
           filters:
           - RewritePath=/license/(?<path>.*), /$\{path}
           - RemoveRequestHeader= Cookie,Set-Cookie
-  http:
-    client:
-      connect-timeout: 30s
-      read-timeout: 120s
+#  http:
+#    client:
+#      connect-timeout: 30s
+#      read-timeout: 120s
 management:
   endpoints:
     web:
